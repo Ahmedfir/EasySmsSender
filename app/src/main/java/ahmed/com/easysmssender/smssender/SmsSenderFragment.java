@@ -123,6 +123,7 @@ public class SmsSenderFragment extends Fragment {
         new LocalContactsLoader(getActivity(), new LocalContactsLoader.ContactsLoadingListener() {
             @Override
             public void onStartedLoading() {
+                if(getActivity() == null || getActivity().isDestroyed() || getActivity().isFinishing()) return;
                 progressDialog = new ProgressDialog(getActivity());
                 progressDialog.setMessage(getString(R.string.loading_users));
                 progressDialog.show();
@@ -130,12 +131,14 @@ public class SmsSenderFragment extends Fragment {
 
             @Override
             public void onError() {
+                if(getActivity() == null || getActivity().isDestroyed() || getActivity().isFinishing()) return;
                 progressDialog.dismiss();
                 Toast.makeText(getActivity(), getString(R.string.an_error_occured), Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onSuccess(List<User> localUsers) {
+                if(getActivity() == null || getActivity().isDestroyed() || getActivity().isFinishing()) return;
                 progressDialog.dismiss();
                 contactsAdapter.setFullDataList(localUsers);
                 contactsAdapter.search(searchView.getSearchText());
@@ -143,6 +146,7 @@ public class SmsSenderFragment extends Fragment {
 
             @Override
             public void onProgress(int numberOfLoadedUsers) {
+                if(getActivity() == null || getActivity().isDestroyed() || getActivity().isFinishing()) return;
                 progressDialog.setMessage(String.format(getString(R.string.loading_users_by_number), numberOfLoadedUsers));
             }
         }).execute();
