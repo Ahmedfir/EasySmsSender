@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- button -->
+
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="@android:color/white" />
+
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@android:color/white" />
+
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <padding
+                android:bottom="3dp"
+                android:left="3dp"
+                android:right="3dp"
+                android:top="3dp" />
+
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+
+</layer-list>

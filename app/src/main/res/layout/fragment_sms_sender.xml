@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <TextView
+        android:layout_marginTop="8dp"
+        android:id="@+id/my_number"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        android:id="@+id/sms_to_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_number"
+        android:maxLines="4"
+        android:padding="12dp"
+        android:hint="@string/write_your_sms"
+        android:scrollbars="vertical" />
+
+    <RelativeLayout
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sms_to_send">
+
+        <include layout="@layout/layout_search_recycler_view" />
+    </RelativeLayout>
+</RelativeLayout>

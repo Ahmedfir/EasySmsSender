@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/darker_gray"
+    android:layout_height="37dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:clickable="true"
+        android:background="@null"
+        android:layout_marginRight="8dp"
+        app:font="HELV_NEUE_LIGHT"
+        android:text="@string/Cancel"
+        android:id="@+id/cancel_button"/>
+
+    <RelativeLayout
+        android:layout_toLeftOf="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_white">
+
+        <ImageView
+            android:id="@+id/search_imageView"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="12dp"
+            android:clickable="true"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            android:src="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/clear_imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cancel" />
+
+        <RelativeLayout
+            android:id="@+id/search_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/clear_imageView"
+            android:layout_toRightOf="@+id/search_imageView">
+
+            <EditText
+                android:id="@+id/search_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@null"
+                android:singleLine="true"
+                android:visibility="invisible"
+                android:textSize="16sp"
+                app:font="HELV_NEUE_LIGHT" />
+
+            <RelativeLayout
+                android:id="@+id/hint_relativelayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:background="@null">
+
+                <ImageView
+                    android:id="@+id/hint_search_imageView"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_search" />
+
+                <TextView
+                    android:id="@+id/hint_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_toRightOf="@+id/hint_search_imageView"
+                    android:text="@string/Search"
+                    android:textSize="16sp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColor="@android:color/darker_gray"
+                    app:font="HELV_NEUE_LIGHT"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
